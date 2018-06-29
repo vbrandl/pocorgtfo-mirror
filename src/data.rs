@@ -247,4 +247,9 @@ impl<'a> Config<'a> {
                 .collect::<Vec<_>>(),
         )
     }
+
+    pub fn sort(mut self) -> Self {
+        self.0.sort();
+        self
+    }
 }

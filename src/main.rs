@@ -16,6 +16,7 @@ fn main() {
     let content = std::fs::read_to_string(path).expect("Cannot read config file");
     let mirror: data::Mirror = serde_json::from_str::<data::Config>(&content)
         .expect("Cannot parse config")
+        .sort()
         .transform();
     std::fs::create_dir_all("./public/files").expect("Cannot create output direcotry");
     std::fs::write("./public/index.html", &format!("{}", mirror))
