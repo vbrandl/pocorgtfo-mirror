@@ -170,5 +170,14 @@
       "pocorgtfo18.pdf",
       "pocorgtfo18_collision.pdf"
     ]
+  },
+  {
+    "volume": 19,
+    "year": 2019,
+    "month": "March",
+    "description": "This janky old piano has a few more tunes! And so do you! And so do I!",
+    "files": [
+      "pocorgtfo19.pdf"
+    ]
   }
 ]
