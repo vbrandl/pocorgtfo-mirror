@@ -1,6 +1,7 @@
 use std::{fmt, fs, path::PathBuf};
 
 use itertools::Itertools;
+use serde::{Deserialize, Serialize};
 use sha1::{Digest, Sha1};
 use sha2::Sha256;
 
@@ -126,7 +127,8 @@ impl<'a> Files<'a> {
 
 impl<'a> fmt::Display for Files<'a> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let hashed: Vec<_> = self.inner()
+        let hashed: Vec<_> = self
+            .inner()
             .iter()
             .map(File::hash)
             .map(Result::unwrap)

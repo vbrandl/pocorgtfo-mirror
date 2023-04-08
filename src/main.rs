@@ -1,10 +1,3 @@
-extern crate itertools;
-#[macro_use]
-extern crate serde_derive;
-extern crate serde_json;
-extern crate sha1;
-extern crate sha2;
-
 mod data;
 
 use std::path::PathBuf;
@@ -19,7 +12,7 @@ fn main() {
         .sort()
         .transform();
     std::fs::create_dir_all("./public/files").expect("Cannot create output direcotry");
-    std::fs::write("./public/index.html", &format!("{}", mirror))
+    std::fs::write("./public/index.html", format!("{mirror}"))
         .expect("Cannot write to output file");
     mirror
         .into_iter()
